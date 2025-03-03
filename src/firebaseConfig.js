@@ -1,6 +1,7 @@
 // Import the required Firebase SDK modules
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage"; // Import Firebase Storage
+import {getFunctions, httpsCallable } from 'firebase/functions'
 
 // Firebase configuration (DO NOT expose API keys in public repositories)
 const firebaseConfig = {
@@ -17,5 +18,6 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Storage
 const storage = getStorage(app);
+const functions = getFunctions(app);
 
-export { app, storage, ref, uploadBytes, getDownloadURL, deleteObject };
+export { app, storage, ref, uploadBytes, getDownloadURL, deleteObject, getFunctions, httpsCallable };
